@@ -6,22 +6,34 @@ Pseudocode for temperature conversion
 MENU = """C - Convert Celsius to Fahrenheit
 F - Convert Fahrenheit to Celsius
 Q - Quit"""
-print(MENU)
-choice = input(">>> ").upper()
-while choice != "Q":
-    if choice == "C":
-        celsius = float(input("Celsius: "))
-        fahrenheit = celsius * 9.0 / 5 + 32
-        print("Result: {:.2f} F".format(fahrenheit))
-    elif choice == "F":
-        fahrenheit = int(input("Fahrenheit: "))
-        celsius = 5 / 9 * (fahrenheit - 32)
-        print("Result: {:.1f} C".format(celsius))
-        
-        # Hint: celsius = 5 / 9 * (fahrenheit - 32)
-        # Remove the "pass" statement when you are done. It's a placeholder.
-    else:
-        print("Invalid option")
+
+
+def main():
     print(MENU)
     choice = input(">>> ").upper()
-print("Thank you.")
+    while choice != "Q":
+        if choice == "C":
+            fahrenheit = convert_to_fahrenheit()
+            print("Result: {:.2f} F".format(fahrenheit))
+        elif choice == "F":
+            celsius = convert_to_celcius()
+            print("Result: {:.1f} C".format(celsius))
+        else:
+            print("Invalid option")
+        print(MENU)
+        choice = input(">>> ").upper()
+    print("Thank you.")
+
+
+def convert_to_celcius():
+    fahrenheit = int(input("Fahrenheit: "))
+    celsius = 5 / 9 * (fahrenheit - 32)
+    return celsius
+
+
+def convert_to_fahrenheit():
+    celsius = float(input("Celsius: "))
+    fahrenheit = celsius * 9.0 / 5 + 32
+    return fahrenheit
+
+main()
