@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 Practical
+CP1404/CP5632 Practical Suggested Solution
 Data file -> lists program
 """
 
@@ -7,6 +7,7 @@ FILENAME = "subject_data.txt"
 
 
 def main():
+    """Read subject data and display neatly."""
     data = get_data()
     display_subjects(data)
 
@@ -29,7 +30,7 @@ def get_data():
 
 
 def display_subjects(data):
-    """Displays subjects"""
+    """Display data nicely."""
     for subject_data in data:
         print("{} is taught by {:12} and has {:3} students".format(*subject_data))
 
