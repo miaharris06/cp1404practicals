@@ -1,7 +1,7 @@
 """
 Emails
 Estimate: 45 min
-Actual: 30mins
+Actual: 32mins
 """
 NUMBERS = "0123456789"
 
